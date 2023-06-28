@@ -1,7 +1,9 @@
 const initialState = {
     countries: [],
+    countriesAll:[],
     detail:{},
-    listCountries:[]
+    listCountries:[],
+    activity:{}
     
 }
 const reducer = (state = initialState, action) => {
@@ -10,7 +12,8 @@ const reducer = (state = initialState, action) => {
 
             return {
                 ...state,//spread operator
-                countries:action.payload
+                countries:action.payload,
+                countriesAll:action.payload
             }
         case"SEARCH_COUNTRY":
        
@@ -32,14 +35,15 @@ const reducer = (state = initialState, action) => {
                 listCountries:action.payload
             }
 
-        // case "FILTER_CARDS":
-        //  const filterCard= ()=>{
-        //     state.countries.filter(
-        //         (arg)=> arg.Continente === action.payload       
-        //     )
-        //  }
-
-
+         case "FILTER_CARDS":
+          const filterCard= state.countriesAll.filter(
+                (arg)=> arg.Continente === action.payload
+            )
+            return{
+                ...state,
+                countries: filterCard
+            }
+         
         default:
         return { ...state };
         

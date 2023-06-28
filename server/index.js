@@ -33,7 +33,7 @@ const colombia = await Country.findByPk("COL")
     Nombre:"CharcoAzul",
     Dificultad:3,
     Duracion:4,
-    Temporada:"Verano",
+    Temporada:"Summer",
   })
 createdActivity.addCountry(colombia)
 

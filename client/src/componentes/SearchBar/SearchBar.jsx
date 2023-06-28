@@ -12,12 +12,15 @@ const SearchBar = () => {
   };
   return (
     <div> 
+       <form className="d-flex" role="search">
       <input
         type="search"
         placeholder="Nombre del país"
         onChange={handleChange}
+        className="form-control me-2"
         ></input>
-      <button onClick={() => dispatch(onSearch(Nombre))}>Buscar</button>
+      <button  className="btn btn-outline-success" onClick={(e) => {e.preventDefault();dispatch(onSearch(Nombre))}}>Buscar</button>
+      </form>
     </div>
   );
 

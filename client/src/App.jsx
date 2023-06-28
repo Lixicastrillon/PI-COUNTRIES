@@ -30,6 +30,7 @@ const dispatch = useDispatch()
         <Route path="/home" element={<Cards data={countries}/>} />
         <Route path="/detail-page/:ID" element={<DetailPage/>}/>
         <Route path="/form-page" element={<FormPage/>}/>
+        
       </Routes>
     </div>
   );

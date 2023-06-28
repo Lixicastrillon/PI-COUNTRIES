@@ -1,15 +1,18 @@
 import {Link} from "react-router-dom"
 
+
 const Card = (data)=> {
-   
+
   return(
-    <div>
+    <div className="card mb-3" style={{"width": "18rem"}}>
+    <img className="card-img-top" src={data.ImagenDeLaBandera.toString()} />
+    <div className="card-body">
       <Link to={`/detail-page/${data.ID}`}>
-      <h2 >{data.Nombre && data.Nombre}</h2>
+      <h4 className="card-title" >{data.Nombre && data.Nombre}</h4>
       </Link>
    
     <h3 > {data.Continente && data.Continente }</h3>
-    <img src={data.ImagenDeLaBandera.toString()} />
+    </div>
     </div>
     )
 }

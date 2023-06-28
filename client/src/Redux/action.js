@@ -49,20 +49,21 @@ export const getcountriesId = (ID) => {
   };
 };
 
-export const filterCards = (continent) => {
-  //filtrado por continente y tipo de actividad.
+export const filterCard = (Continente) => {
+  //filtrado por continente 
   return {
     type: "FILTER_CARDS",
-    payload: continent,
+    payload: Continente,
   };
 };
 
-export const getCountriesList= ()=> {
+export const getCountriesList = () => {
+  // solicitar ID y nombre de paises
   return async (dispatch) => {
     try {
       const { data } = await axios.get("http://localhost:3001/countries/list");
       return dispatch({
-        type:"GET_COUNTRIES_LIST",
+        type: "GET_COUNTRIES_LIST",
         payload: data,
       });
     } catch (error) {
@@ -70,4 +71,5 @@ export const getCountriesList= ()=> {
     }
   };
 };
+
 
